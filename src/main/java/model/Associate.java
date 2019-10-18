@@ -5,6 +5,9 @@ import java.util.Calendar;
 
 @Entity
 @SequenceGenerator(name = "seq_associado",sequenceName = "seq_associado",initialValue = 1,allocationSize = 1)
+@NamedQueries({
+        @NamedQuery(name = "filter-associates-by-name",query = "select a from Associate a where a.nome like :filter")
+})
 public class Associate {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_associado")

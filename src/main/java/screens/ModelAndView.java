@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import show.Main;
 
+import java.awt.*;
 import java.io.InputStream;
 import java.util.Objects;
 
@@ -19,10 +20,20 @@ public class ModelAndView {
         if (Objects.nonNull(logado) && !logado.equals("user-not-logged-in")) {
             HomeController homeController = (HomeController) screen(page);
             homeController.setViewName(this);
+             Dimension d = screenSize();
+             Main.getStage().setHeight(d.height);
+             Main.getStage().setWidth(d.width);
+
             return "successfully";
         }else {
             return "screen/authentication/authentication";
         }
+    }
+
+    public Dimension screenSize(){
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension dimension = toolkit.getScreenSize();
+        return dimension;
     }
 
     public void screenLogged(String page) {
@@ -57,6 +68,7 @@ public class ModelAndView {
             AnchorPane anchorPane = (AnchorPane) loader.load(stream);
             stream.close();
             Scene scene = new Scene(anchorPane);
+
             Main.getStage().setScene(scene); // executa controller de telas
             return (Initializable) loader.getController();
         } catch (Exception e) {

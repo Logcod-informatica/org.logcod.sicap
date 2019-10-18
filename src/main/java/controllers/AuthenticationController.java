@@ -23,7 +23,7 @@ public class AuthenticationController implements Initializable {
     @FXML
     private PasswordField passwd;
     @FXML
-    private ImageView fotoPerfil;
+    private ImageView fotoPerfil,key,padlock;
 
     private ModelAndView viewName;
 
@@ -39,7 +39,6 @@ public class AuthenticationController implements Initializable {
 
     @FXML
     private String logar(ActionEvent event) {
-
         String logged = repository.administratorLoggedIn(user.getText(),passwd.getText());
         ModelAndView ecreen = new ModelAndView();
         String msg = ecreen.screenHome("screen/home",logged);
@@ -50,6 +49,9 @@ public class AuthenticationController implements Initializable {
         try {
             // fotoPerfil.setBlendMode(new Blend().getMode());
             fotoPerfil.setImage(new Image(getClass().getClassLoader().getResourceAsStream("screen/images/avatar.png")));
+            key.setImage(new Image(getClass().getClassLoader().getResourceAsStream("screen/images/png/avatar.png")));
+            padlock.setImage(new Image(getClass().getClassLoader().getResourceAsStream("screen/images/png/padlock.png")));
+
         } catch (Exception e) {
             System.out.println("Imagem não encontrada!");
         }
