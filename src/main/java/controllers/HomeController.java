@@ -13,6 +13,8 @@ public class HomeController implements Initializable {
     @FXML
     private AnchorPane screenHome;
 
+    public String permission = "Negada";
+
     private ModelAndView viewName;
 
     public void setViewName(ModelAndView viewName) {

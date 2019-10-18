@@ -15,9 +15,14 @@ import java.util.Objects;
 
 public class ModelAndView {
 
-    public void screenHome(String page) {
-        HomeController homeController = (HomeController) screen(page);
-        homeController.setViewName(this);
+    public String screenHome(String page, String logado) {
+        if (Objects.nonNull(logado) && !logado.equals("user-not-logged-in")) {
+            HomeController homeController = (HomeController) screen(page);
+            homeController.setViewName(this);
+            return "successfully";
+        }else {
+            return "screen/authentication/authentication";
+        }
     }
 
     public void screenLogged(String page) {

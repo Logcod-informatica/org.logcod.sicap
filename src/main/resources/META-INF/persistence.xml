@@ -6,6 +6,8 @@
     <class>model.Office</class>
     <class>model.Associate</class>
     <class>model.Employee</class>
+    <class>model.Admin</class>
+
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost:9092/default"/>

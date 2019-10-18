@@ -9,11 +9,16 @@ import java.util.List;
 public class RepositoryEmployee extends GenericoRepository<Employee> {
 
     public String employeeLogged (String user){
-        EntityManager em = getConfigJPAHibernate().getManager();
-        Query query = em.createNamedQuery("start-employee-access");
-        query.setParameter("logged",user);
-        Employee employee = (Employee)query.getSingleResult();
-        return employee.getUser();
+       try {
+           EntityManager em = getConfigJPAHibernate().getManager();
+           Query query = em.createNamedQuery("start-employee-access");
+           query.setParameter("logged",user);
+           Employee employee = (Employee)query.getSingleResult();
+           return employee.getUser();
+       }catch (Exception e){
+           return null;
+       }
+
     }
 
     public List<Employee> searchEemployeesByFilter (String filter){

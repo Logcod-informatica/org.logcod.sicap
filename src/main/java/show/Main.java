@@ -13,7 +13,8 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
-       setUserAgentStylesheet(STYLESHEET_CASPIAN);
+        stage.setTitle("Sistema de Cadastro de Pescadores");
+        setUserAgentStylesheet(STYLESHEET_CASPIAN);
         ModelAndView andView = new ModelAndView();
         andView.screenLogged("screen/authentication/authentication");
         primaryStage.show();

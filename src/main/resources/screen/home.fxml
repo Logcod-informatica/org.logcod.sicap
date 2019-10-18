@@ -9,9 +9,60 @@
 <AnchorPane fx:id="screenHome" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.HomeController"
-            prefHeight="500.0" prefWidth="600.0">
+            prefHeight="500.0" prefWidth="800.0">
     <children>
-        <Button fx:id="save" onMouseClicked="#logar" text="Logar"/>
+        <MenuBar fx:id="itemA" layoutX="27.0" layoutY="14.0" prefHeight="47.0" prefWidth="1450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu fx:id="menu" mnemonicParsing="false"  text="Cadastros">
+                    <items>
+                        <MenuItem id="menu-item" fx:id="item1" mnemonicParsing="false"  text="Associado" />
+                        <MenuItem fx:id="item2" mnemonicParsing="false"  text="Associação" />
+                        <MenuItem fx:id="item3" mnemonicParsing="false" text="Funcionario" />
+                        <MenuItem fx:id="item4" mnemonicParsing="false" text="Profissão" />
+                        <MenuItem mnemonicParsing="false" text="Cargo" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menu2" mnemonicParsing="false" text="Pesquisar">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Associações" />
+                        <MenuItem mnemonicParsing="false" text="Associados" />
+                        <MenuItem mnemonicParsing="false"  text="Funcionarios" />
+                        <MenuItem mnemonicParsing="false" text="Cargos" />
+                        <MenuItem mnemonicParsing="false"  text="Profissões" />
+                        <MenuItem mnemonicParsing="false" fx:value="" text="Pagamentos" />
+
+                    </items>
+                </Menu>
+                <Menu fx:id="menu3" mnemonicParsing="false" text="Relatorios">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Associação" />
+                        <MenuItem mnemonicParsing="false" text="Associados" />
+                        <MenuItem mnemonicParsing="false" text="Funcionarios" />
+                        <MenuItem mnemonicParsing="false" text="Profissões" />
+                        <MenuItem mnemonicParsing="false" text="Cargos" />
+                        <MenuItem mnemonicParsing="false" text="Documentos" />
+                    </items>
+                </Menu>
+
+                <Menu fx:id="menu4" mnemonicParsing="false" text="Financeiro">
+                    <items>
+                        <MenuItem mnemonicParsing="false"  text="Pagamento mensal" />
+                        <MenuItem mnemonicParsing="false"  text="Pagamento anual" />
+                        <MenuItem mnemonicParsing="false" text="Quitamento Total" />
+                        <MenuItem mnemonicParsing="false"  text="Consultar pagamentos" />
+
+                    </items>
+                </Menu>
+                <Menu fx:id="menu5" mnemonicParsing="false" text="Documento INSS">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Criar Documento" />
+
+                    </items>
+                </Menu>
+
+            </menus>
+
+        </MenuBar>
     </children>
 
 </AnchorPane>
