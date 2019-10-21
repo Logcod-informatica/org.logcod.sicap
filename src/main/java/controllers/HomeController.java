@@ -55,7 +55,7 @@ public class HomeController implements Initializable {
     @FXML
     public String screenAssociate(MouseEvent e){
        ModelAndView view = new ModelAndView();
-       view.screenFormAssociate("screen/register/register-associate");
+       view.screenFormAssociate("screen/register/register-associate",null);
         return "";
     }
     RepositoryAssociate repositoryAssociate = new RepositoryAssociate();

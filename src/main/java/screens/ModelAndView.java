@@ -2,12 +2,15 @@ package screens;
 
 import controllers.AssociateFormController;
 import controllers.AuthenticationController;
+import controllers.EmployeeController;
 import controllers.HomeController;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import model.Associate;
+import model.Employee;
 import show.Main;
 
 import java.awt.*;
@@ -32,7 +35,7 @@ public class ModelAndView {
         }
     }
 
-    public Dimension screenSize() {
+    private Dimension screenSize() {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
         return dimension;
@@ -45,10 +48,17 @@ public class ModelAndView {
 
     }
 
-    public void screenFormAssociate(String page) {
+    public void screenFormAssociate(String page , Associate associate) {
         AssociateFormController associateFormController = (AssociateFormController) screen(page);
         associateFormController.setViewName(this);
-      //  if (Objects.nonNull(associateFormController.editarAssociate())) ;
+
+        if (Objects.nonNull(associateFormController.editarAssociate(associate))) ;
+    }
+
+    public void screenEmployee(String url, Employee employee, String permission[]){
+        EmployeeController controller = (EmployeeController)screen(url);
+        controller.setViewName(this);
+
     }
 
     private ModelAndView viewName;
