@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="screenHome" prefHeight="567.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
+<AnchorPane fx:id="screenHome" prefHeight="567.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeController">
     <children>
         <MenuBar fx:id="itemA" layoutX="27.0" layoutY="14.0" prefHeight="47.0" prefWidth="1450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -72,7 +72,7 @@
         </MenuBar>
       <HBox layoutY="47.0" prefHeight="120.0" prefWidth="860.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
          <children>
-            <Pane prefHeight="96.0" prefWidth="173.0" style="-fx-border-color: black; -fx-border-width: 5;">
+            <Pane  prefHeight="96.0" prefWidth="173.0" onMouseClicked="#screenAssociate" style="-fx-border-color: black; -fx-border-width: 5;">
                <children>
                   <ImageView fx:id="btAssociate" fitHeight="72.0" fitWidth="97.0" layoutX="35.0" layoutY="12.0" onMouseClicked="#screenAssociate" />
                   <Label alignment="CENTER" layoutX="9.0" layoutY="90.0" prefHeight="16.0" prefWidth="153.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Associado">
@@ -92,7 +92,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="210.0" layoutY="10.0" prefHeight="47.0" prefWidth="173.0" style="-fx-border-color: black; -fx-border-width: 5;">
+            <Pane layoutX="210.0" layoutY="10.0"  prefHeight="47.0" prefWidth="173.0" style="-fx-border-color: black; -fx-border-width: 5;">
                <children>
                   <ImageView fx:id="btCargo" fitHeight="72.0" fitWidth="97.0" layoutX="35.0" layoutY="11.0" />
                   <Label alignment="CENTER" layoutX="9.0" layoutY="90.0" prefHeight="16.0" prefWidth="153.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Cargo">
@@ -102,7 +102,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="410.0" layoutY="10.0" prefHeight="96.0" prefWidth="173.0" style="-fx-border-color: black; -fx-border-width: 5;">
+            <Pane layoutX="410.0" layoutY="10.0"  prefHeight="96.0" prefWidth="173.0" style="-fx-border-color: black; -fx-border-width: 5;">
                <children>
                   <ImageView fx:id="btEmplooyee11" fitHeight="72.0" fitWidth="97.0" layoutX="35.0" layoutY="11.0" />
                   <Label alignment="CENTER" layoutX="9.0" layoutY="90.0" prefHeight="16.0" prefWidth="153.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Profissão">
@@ -122,17 +122,30 @@
                   </Label>
                </children>
             </Pane>
+            <Pane layoutX="702.0" layoutY="10.0" prefHeight="116.0" prefWidth="213.0" style="-fx-border-color: black; -fx-border-width: 5;">
+               <children>
+                  <ImageView fx:id="btEmplooyee1111" fitHeight="53.0" fitWidth="53.0" layoutX="76.0" layoutY="24.0" />
+                  <Label alignment="CENTER" layoutX="31.0" layoutY="84.0" prefHeight="16.0" prefWidth="153.0" style="-fx-background-color: silver; -fx-text-fill: black;" text="Nome usuario">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
          <padding>
             <Insets bottom="4.0" />
          </padding>
       </HBox>
-      <TableView fx:id="tableView"  layoutX="2.0" layoutY="185.0" prefHeight="364.0" prefWidth="863.0">
+      <TableView fx:id="tableView" layoutX="2.0" layoutY="185.0" prefHeight="364.0" prefWidth="1077.0">
         <columns>
-          <TableColumn fx:id="tcChave" prefWidth="75.0" text="Chave" />
-          <TableColumn fx:id="tcNome" prefWidth="327.0" text="Nome completo" />
-            <TableColumn fx:id="tcSexo" prefWidth="200.0" text="Sexo" />
-            <TableColumn fx:id="tcContato" prefWidth="200.0" text="Contato / E-mail" />
+          <TableColumn fx:id="tcChave" style="-fx-alignment: center;" prefWidth="75.0" text="Chave" />
+          <TableColumn fx:id="tcNome" style="-fx-alignment: center;" prefWidth="327.0" text="Nome completo" />
+            <TableColumn fx:id="tcSexo" prefWidth="168.0" style="-fx-alignment: center;" text="Sexo" />
+            <TableColumn fx:id="tcContato" style="-fx-alignment: center;" prefWidth="194.0" text="Contato / E-mail" />
+            <TableColumn fx:id="tcChequeEdit" style="-fx-alignment: center;" prefWidth="108.0" text="Editar" />
+            <TableColumn fx:id="tcChequeRemove" style="-fx-alignment: center;" prefWidth="98.0" text="Remover" />
+            <TableColumn fx:id="tcChequeView" style="-fx-alignment: center;" prefWidth="106.0" text="Vizualizar" />
         </columns>
       </TableView>
     </children>

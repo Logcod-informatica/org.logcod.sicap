@@ -17,20 +17,22 @@ import java.util.Objects;
 public class ModelAndView {
 
     public String screenHome(String page, String logado) {
+        System.out.println( "Log-> "+logado);
         if (Objects.nonNull(logado) && !logado.equals("user-not-logged-in")) {
             HomeController homeController = (HomeController) screen(page);
             homeController.setViewName(this);
-             Dimension d = screenSize();
-             Main.getStage().setHeight(d.height);
-             Main.getStage().setWidth(d.width);
+            Dimension d = screenSize();
+            Main.getStage().setHeight(d.height);
+            Main.getStage().setWidth(d.width);
 
             return "successfully";
-        }else {
-            return "screen/authentication/authentication";
+        } else {
+
+            return null;
         }
     }
 
-    public Dimension screenSize(){
+    public Dimension screenSize() {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
         return dimension;
@@ -40,13 +42,13 @@ public class ModelAndView {
         AuthenticationController authenticationController = (AuthenticationController) screen(page);
         authenticationController.setViewName(this);
         authenticationController.imageLogo();
+
     }
 
     public void screenFormAssociate(String page) {
         AssociateFormController associateFormController = (AssociateFormController) screen(page);
-        long id = 1L;
         associateFormController.setViewName(this);
-        if (Objects.nonNull(associateFormController.editarAssociate()));
+      //  if (Objects.nonNull(associateFormController.editarAssociate())) ;
     }
 
     private ModelAndView viewName;

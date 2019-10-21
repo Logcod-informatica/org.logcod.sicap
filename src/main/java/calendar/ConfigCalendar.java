@@ -17,4 +17,15 @@ public class ConfigCalendar {
 
 
     }
+
+    public static String setFormatarDateCalendar(Calendar calendar){
+        try{
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+             return format.format(calendar);
+        }catch (Exception e){
+            return  null;
+        }
+
+
+    }
 }
